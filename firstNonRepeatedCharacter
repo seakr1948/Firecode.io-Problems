@@ -1,0 +1,25 @@
+public static Character (String str) {
+
+HashMap<Character, Integer> CharSequence = new HashMap<Character, Integer>();
+		
+		for (int index = 0; index < str.length(); index++) {
+			Integer charcount = CharSequence.get(str.charAt(index));
+			if (charcount == null) {
+				CharSequence.put(str.charAt(index), 1);
+			}
+			else
+				CharSequence.put(str.charAt(index), charcount + 1);
+		}
+		
+		if (CharSequence.containsValue(1)) {
+		    
+			for (int index = 0; index < str.length(); index++) {
+			    
+				int count = CharSequence.get(str.charAt(index));
+				if (count == 1) {
+					return str.charAt(index);
+				}
+			        }
+		}
+	return null;
+}
