@@ -1,0 +1,25 @@
+public static void flipItVerticalAxis(int[][] matrix) {
+   
+    int counter = 0;
+    
+     for (int i = 0; i < matrix.length; ++i)
+	    {
+	        
+	        int[] temp = new int[matrix[i].length]; // sets temp array to length of array that is being copied
+          
+	            for (int j = 0; j < matrix[i].length; ++j) // copies elements from matrix into array
+	                {
+	                    temp[j] = matrix[i][j];
+	                    counter++;
+	                }
+	                
+	            for (int j = 0; j < matrix[i].length; ++j) // uses counter to copy temp array elements 
+                                                         // to actual array, starting from the back 
+                                                         // moving to the front
+	                {
+	                    counter--;
+	                    matrix[i][j] = temp[counter];
+	                }
+	        counter = 0; // security measure to ensure counter starts at zero
+	    }
+}
