@@ -1,0 +1,31 @@
+public static String duplicate(int[] numbers){
+    
+
+  Arrays.sort(numbers);
+		    int temp = 0;
+		   
+		    
+		    TreeSet<String> tree = new TreeSet();
+		    
+		int[] duplicates = new int[numbers.length];
+
+		    for (int index = 0; index < numbers.length-1; index++)
+		    {
+		    	if (tree.contains(Integer.toString(numbers[index])) == false)
+		    	{
+		            if (numbers[index] == numbers[index+1])
+		            {
+		              tree.add(Integer.toString(numbers[index])); 
+		            }
+		            
+		        }
+		    }
+		    
+		 if (tree == null) {
+			 return "";
+		 }
+		 else
+	    return tree.toString();
+	 
+
+}
